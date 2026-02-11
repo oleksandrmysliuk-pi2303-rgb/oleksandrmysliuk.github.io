@@ -1,0 +1,57 @@
+h1 { 
+    color: rgb(106, 104, 99);
+    font-size: 70px;
+    text-align: center;
+}
+
+
+.btn1{
+width: 200px;
+height: 50px;
+color:rgb(106, 104, 99);;
+font-size: 30px;
+display: block;
+border: 1px solid;
+border-radius:10px ;
+text-align: center;
+text-decoration: none;
+margin-bottom: 20px;
+line-height: 50px;
+}
+.btn1:hover{
+background-color: rgb(184, 179, 179);
+}
+
+.btn2{
+width: 200px;
+height: 50px;
+color:rgb(106, 104, 99);;
+font-size: 30px;
+display: block;
+border: 1px solid;
+border-radius:10px ;
+text-align: center;
+text-decoration: none;
+margin-bottom: 20px;
+line-height: 50px;
+}
+.btn2:hover{
+background-color: rgb(184, 179, 179);
+}
+
+.btn3{
+width: 200px;
+height: 50px;
+color:rgb(106, 104, 99);;
+font-size: 30px;
+display: block;
+border: 1px solid;
+border-radius:10px ;
+text-align: center;
+text-decoration: none;
+margin-top: 20px;
+line-height: 50px;
+}
+.btn3:hover{
+background-color: rgb(184, 179, 179);
+}
