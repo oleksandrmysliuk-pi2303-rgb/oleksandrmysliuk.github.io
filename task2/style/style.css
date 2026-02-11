@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 20px;
+}
+
+/* Заголовки */
+h1, h2 {
+    color: #2c3e50;
+}
+
+/* Блоки з інформацією */
+.info {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Таблиця прайс-листа */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Посилання */
+a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Зображення */
+img {
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+/* Список автора */
+ul {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    width: 50%;
+}
