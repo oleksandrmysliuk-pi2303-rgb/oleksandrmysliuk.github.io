@@ -1,0 +1,606 @@
+
+/*-----------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Твої кольори */
+    --primary: rgb(106, 104, 99);    
+    --secondary: rgb(184, 179, 179); 
+    --light: #ecf0f1;
+    --white: #ffffff;
+    --overlay: rgba(0, 0, 0, 0.5);
+    
+    /* Тіні */
+    --shadow: 0 5px 15px rgba(0,0,0,0.3);
+    
+    /* Відступи */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --space-xl: 4rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: url('image/adrienolichon.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    padding: var(--space-md);
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay);
+    z-index: 0;
+    pointer-events: none;
+}
+
+header, main, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* ========== ТИПОГРАФІКА ========== */
+h1 {
+    color: var(--primary);
+    font-size: 70px;  /* як у твоєму коді */
+    text-align: center;
+    margin-bottom: var(--space-md);
+    font-weight: bold;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 40px;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: var(--space-xs);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+h2:first-of-type {
+    margin-top: 0;
+}
+
+h3 {
+    color: var(--primary);
+    font-size: 30px;
+    margin-bottom: var(--space-sm);
+}
+
+p {
+    margin-bottom: var(--space-sm);
+    font-size: 18px;
+}
+
+/* ========== НАВІГАЦІЯ ========== */
+header {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: var(--space-lg);
+    position: sticky;
+    top: 1rem;
+    z-index: 1000;
+    border: 1px solid var(--primary);
+}
+
+nav {
+    padding: var(--space-sm) var(--space-md);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+nav a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+nav a:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+/* ========== ГОЛОВНИЙ КОНТЕЙНЕР ========== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: var(--space-xl);
+    border: 1px solid var(--primary);
+}
+
+/* ========== СЕКЦІЯ ПРО МЕНЕ ========== */
+#about {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+    background: #f9f9f9;
+    padding: var(--space-lg);
+    border-radius: 15px;
+    margin-bottom: var(--space-xl);
+    border: 1px solid var(--secondary);
+}
+
+#about header {
+    grid-column: 1 / -1;
+    background: none;
+    box-shadow: none;
+    margin-bottom: 0;
+    position: static;
+    border: none;
+}
+
+#about h1 {
+    margin-bottom: var(--space-xs);
+    font-size: 70px;
+}
+
+#about p {
+    font-size: 24px;
+    color: var(--primary);
+    text-align: center;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+
+figure img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+figure img:hover {
+    transform: scale(1.05);
+}
+
+figcaption {
+    margin-top: var(--space-xs);
+    font-style: italic;
+    color: var(--primary);
+    font-size: 18px;
+}
+
+#about > p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* ========== СЕКЦІЯ НАВИЧОК ========== */
+#skills {
+    margin-bottom: var(--space-xl);
+}
+
+#skills article {
+    background: #f9f9f9;
+    padding: var(--space-md);
+    border-radius: 10px;
+    margin-bottom: var(--space-md);
+    transition: all 0.3s ease;
+    border: 1px solid var(--secondary);
+}
+
+#skills article:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary);
+}
+
+#skills h3 {
+    color: var(--primary);
+    font-size: 30px;
+    margin-bottom: var(--space-sm);
+}
+
+#skills ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-sm);
+}
+
+#skills li {
+    background: var(--white);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 3px solid var(--primary);
+    font-size: 18px;
+    border: 1px solid var(--secondary);
+}
+#experience article,
+#education article {
+    background: #f9f9f9;
+    border: 1px solid var(--secondary);
+    border-radius: 10px;
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#experience article:hover,
+#education article:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary);
+}
+
+#experience header,
+#education header {
+    background: none;
+    box-shadow: none;
+    position: static;
+    margin-bottom: var(--space-sm);
+    border: none;
+}
+
+#experience h3,
+#education h3 {
+    font-size: 30px;
+}
+
+#experience time,
+#education time {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#experience ul {
+    list-style-position: inside;
+    margin-top: var(--space-sm);
+}
+
+#experience li {
+    margin-bottom: var(--space-xs);
+    padding-left: var(--space-md);
+    position: relative;
+    font-size: 18px;
+}
+
+#experience li::before {
+    content: "→";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+}
+
+/* ========== МОВИ ========== */
+#languages {
+    margin-bottom: var(--space-xl);
+}
+
+#languages ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+}
+
+#languages li {
+    background: var(--white);
+    color: var(--primary);
+    padding: var(--space-md);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 2px solid var(--secondary);
+}
+
+#languages li:hover {
+    transform: scale(1.05);
+    background-color: var(--secondary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+#languages span {
+    display: block;
+    font-size: 18px;
+    opacity: 0.8;
+    margin-top: var(--space-xs);
+}
+
+/* ========== КОНТАКТИ ========== */
+#contacts {
+    background: #f9f9f9;
+    padding: var(--space-xl);
+    border-radius: 15px;
+    margin-bottom: var(--space-xl);
+    border: 2px solid var(--secondary);
+}
+
+#contacts h2 {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+#contacts address {
+    font-style: normal;
+}
+
+#contacts ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+}
+
+#contacts li {
+    padding: var(--space-sm);
+    background: var(--white);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--secondary);
+    font-size: 18px;
+}
+
+#contacts li:hover {
+    transform: translateY(-3px);
+    background-color: var(--secondary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+#contacts a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+#contacts li:hover a {
+    color: var(--white);
+}
+
+#contacts a:hover {
+    text-decoration: underline;
+}
+
+/* ========== ПІДВАЛ ========== */
+footer {
+    max-width: 1200px;
+    margin: var(--space-md) auto 0;
+    text-align: center;
+    padding: var(--space-lg);
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 1;
+    border: 1px solid var(--primary);
+}
+
+footer p {
+    margin-bottom: var(--space-xs);
+    color: var(--primary);
+    font-size: 18px;
+}
+
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--secondary);
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    color: var(--primary);
+    font-size: 30px;
+    display: block;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 50px;
+    background: var(--white);
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+
+.btn-resume {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+    box-shadow: var(--shadow);
+    width: 200px;
+    height: 50px;
+    color: var(--primary);
+    font-size: 30px;
+    display: block;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 50px;
+    background: var(--white);
+    transition: all 0.3s ease;
+}
+
+.btn-resume:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+
+
+@media (max-width: 768px) {
+    body {
+        padding: var(--space-xs);
+    }
+    
+    h1 {
+        font-size: 50px;
+    }
+    
+    h2 {
+        font-size: 30px;
+    }
+    
+    h3 {
+        font-size: 24px;
+    }
+    
+    main {
+        padding: var(--space-md);
+    }
+    
+    #about {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-md);
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-xs);
+    }
+    
+    nav li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav a {
+        display: block;
+    }
+    
+    #skills ul,
+    #languages ul,
+    #contacts ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-resume {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        top: auto;
+        transform: none;
+        width: 150px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --space-xl: 2rem;
+        --space-lg: 1.5rem;
+        --space-md: 1rem;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+    
+    figure img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .btn-resume {
+        width: 120px;
+        font-size: 20px;
+        height: 40px;
+        line-height: 40px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.8s ease-out;
+}
+
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    body::before {
+        display: none;
+    }
+    
+    header, footer, .btn-resume {
+        display: none;
+    }
+    
+    main {
+        box-shadow: none;
+        padding: 0;
+        border: none;
+    }
+    
+    #about {
+        background: none;
+    }
+}
