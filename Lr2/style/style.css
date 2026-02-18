@@ -1,0 +1,120 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.page-container {
+	max-width: 980px;
+	margin: 20px auto 0;
+}
+.left-side {
+	width: 25%;
+	background-color:  rgb(106, 104, 99);
+}
+.right-side {
+	width: calc(75% - 6px);
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Меню */
+.menu {
+    list-style: none;
+    background: rgb(106, 104, 99);
+    padding: 15px;
+    margin: 0;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 25px;
+}
+
+.menu a {
+    color: rgb(196, 196, 196);;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Контейнер */
+.cv {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Ліва колонка */
+.left {
+    width: 25%;
+    min-height: 100vh;
+    background: rgb(106, 104, 99);
+    color: rgb(196, 196, 196);
+    float: left;
+    padding: 25px;
+}
+
+/* Забираємо маркери в лівій колонці */
+.left ul {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+.left ul li {
+    margin-bottom: 8px;
+}
+
+/* Фото */
+.photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+/* Права колонка */
+.right {
+    width: 75%;
+    float: left;
+    padding: 30px;
+    color: white;   
+}
+
+/* Забираємо маркери в правій колонці */
+.right ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.right ol > li {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.right ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.right ul li {
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+h2 {
+    border-bottom: 1px solid rgb(196, 196, 196);;
+    padding-bottom: 5px;
+    margin-top: 25px;
+}
+
+.code {
+    background: rgb(196, 196, 196);;
+    padding: 12px;
+    font-family: monospace;
+}
