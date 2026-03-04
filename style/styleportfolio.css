@@ -9,7 +9,7 @@ h1 {
     padding-top: 10px; 
 }
 
-.btn1{
+.btn{
 width: 200px;
 height: 50px;
 color:rgb(106, 104, 99);;
@@ -22,80 +22,9 @@ text-decoration: none;
 margin-bottom: 20px;
 line-height: 50px;
 }
-.btn1:hover{
+.btn:hover{
 background-color: rgb(184, 179, 179);
 }
-
-.btn2{
-width: 200px;
-height: 50px;
-color:rgb(106, 104, 99);;
-font-size: 30px;
-display: block;
-border: 1px solid;
-border-radius:10px ;
-text-align: center;
-text-decoration: none;
-margin-bottom: 20px;
-line-height: 50px;
-}
-.btn2:hover{
-background-color: rgb(184, 179, 179);
-}
-
-.btn3{
-width: 200px;
-height: 50px;
-color:rgb(106, 104, 99);;
-font-size: 30px;
-display: block;
-border: 1px solid;
-border-radius:10px ;
-text-align: center;
-text-decoration: none;
-margin-top: 20px;
-line-height: 50px;
-}
-.btn3:hover{
-background-color: rgb(184, 179, 179);
-}
-
-.btn4{
-width: 200px;
-height: 50px;
-color:rgb(106, 104, 99);;
-font-size: 30px;
-display: block;
-border: 1px solid;
-border-radius:10px ;
-text-align: center;
-text-decoration: none;
-margin-top: 20px;
-line-height: 50px;
-}
-
-.btn4:hover{
-background-color: rgb(184, 179, 179);
-}
-
-.btn5{
-width: 200px;
-height: 50px;
-color:rgb(106, 104, 99);;
-font-size: 30px;
-display: block;
-border: 1px solid;
-border-radius:10px ;
-text-align: center;
-text-decoration: none;
-margin-top: 20px;
-line-height: 50px;
-}
-
-.btn5:hover{
-background-color: rgb(184, 179, 179);
-}
-
 .avatar{
   width: 150px;
     height: 150px;
@@ -106,3 +35,4 @@ background-color: rgb(184, 179, 179);
 
 
 }
+
