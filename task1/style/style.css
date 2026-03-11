@@ -1,4 +1,14 @@
-img{
-    width: 300px;
+
+a:link { color: blue; text-decoration: none; }
+a:visited { color: pink; text-decoration: none; }
+a:hover { color: red; text-decoration: underline; }
+a:active { color: yellow; text-decoration: underline; }
+
+img {
+    max-width: 300px;
     height: auto;
+}
+
+.special {
+    color: rgba(189, 2, 251, 0.985);
 }
