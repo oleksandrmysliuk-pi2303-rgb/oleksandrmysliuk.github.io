@@ -1,0 +1,15 @@
+.title{
+text-align: center;
+position: relative;
+}
+
+.title::before,
+.title::after{
+content: "";
+display: inline-block;
+width: 690px;
+height: 3px;
+background: black;
+vertical-align: middle;
+margin: 0 10px;
+}

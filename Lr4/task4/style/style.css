@@ -1,0 +1,59 @@
+.battery {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    background: #e0e0e0;
+    border: 3px solid #333;
+    border-radius: 6px;
+    margin: 20px;
+}
+
+.battery::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: -10px;
+    width: 8px;
+    height: 18px;
+    background: #333;
+    border-radius: 0 4px 4px 0;
+}
+
+.battery::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 24px;
+    background: repeating-linear-gradient(
+        90deg,
+        currentColor 0px,
+        currentColor 18px,
+        transparent 18px,
+        transparent 22px
+    );
+}
+
+.battery-full {
+    color: #4CAF50;  /* зелений */
+}
+
+.battery-full::after {
+    width: 86px;
+}
+
+.battery-medium {
+    color: #FFC107;  /* жовтий */
+}
+
+.battery-medium::after {
+    width: 62px;
+}
+
+.battery-low {
+    color: #F44336;  /* червоний */
+}
+
+.battery-low::after {
+    width: 38px;
+}
