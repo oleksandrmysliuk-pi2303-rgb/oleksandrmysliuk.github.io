@@ -13,7 +13,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: url('image/adrienolichon.jpg');
+    background: url('../image/adrienolichon.jpg');
     background-size: cover;
     min-height: 100vh;
     padding: var(--space-md);
