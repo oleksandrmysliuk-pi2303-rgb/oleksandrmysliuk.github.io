@@ -13,13 +13,26 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: url('/image/adrienolichon.jpg');
+    background: url('../image/adrienolichon.jpg');
     background-size: cover;
     min-height: 100vh;
     padding: var(--space-md);
     position: relative;
 }
+.button-group {
+    display: flex;           
+    gap: 40px;             
+    justify-content: left; 
+}
+.left-buttons {
+    display: flex;
+    flex-direction: column;  /* вертикально */
+}
 
+.right-buttons {
+    display: flex;
+    flex-direction: column;  /* вертикально */
+}
 .btn{
 width: 200px;
 height: 50px;
