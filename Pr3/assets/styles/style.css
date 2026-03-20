@@ -28,7 +28,7 @@ img {
 
 header {
 	height: 138px;
-	background-image: url(/Pr3/assets/images/header.png);
+	background-image: url(../Pr3/assets/images/header.png);
 	background-repeat: no-repeat; /*описати призначення властивості у проєкті*/
 	background-size: contain; /*описати призначення властивості у проєкті*/
 	background-position: center; /*описати призначення властивості у проєкті*/
