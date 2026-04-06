@@ -1,0 +1,74 @@
+ body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #fff;
+    }
+ 
+    h2 {
+         margin-bottom: 30px; 
+        }
+ 
+    /* ===== СПОСІБ 1: через <table> ===== */
+    .section-title {
+      font-weight: bold;
+      margin: 20px 0 8px;
+    }
+ 
+    table.company-table {
+      border-collapse: collapse;
+      width: 600px;
+    }
+ 
+    table.company-table th,
+    table.company-table td {
+      padding: 12px 20px;
+      text-align: left;
+    }
+ 
+    table.company-table thead tr {
+      background: #5b8db8;
+      color: #fff;
+    }
+ 
+    table.company-table tbody tr:nth-child(odd) {
+      background: #dce9f5;
+    }
+ 
+    table.company-table tbody tr:nth-child(even) {
+      background: #eef4fb;
+    }
+ 
+    /* ===== СПОСІБ 2: через float ===== */
+    .float-table {
+      width: 600px;
+      margin-top: 10px;
+      overflow: hidden; /* clearfix */
+    }
+ 
+    .float-row {
+      overflow: hidden; /* clearfix для дочірніх float-елементів */
+    }
+ 
+    .float-row .cell {
+      float: left;
+      width: 120px;         /* 600px / 5 колонок */
+      padding: 12px 0 12px 20px;
+      box-sizing: border-box;
+    }
+ 
+    /* Шапка */
+    .float-row.header .cell {
+      background: #5b8db8;
+      color: #fff;
+      font-weight: bold;
+    }
+ 
+    /* Парні рядки */
+    .float-row.odd .cell {
+      background: #dce9f5;
+    }
+ 
+    /* Непарні рядки */
+    .float-row.even .cell {
+      background: #eef4fb;
+    }

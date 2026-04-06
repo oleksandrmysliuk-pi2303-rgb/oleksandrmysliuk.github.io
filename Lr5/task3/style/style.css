@@ -1,0 +1,107 @@
+body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #fff;
+    }
+    h2{
+        margin-top: 40px;
+    }
+    .section-title {
+      font-weight: bold;
+      margin: 20px 0 8px;
+    }
+ 
+    /* ===== СПОСІБ 1: через <table> ===== */
+    table.mark-table {
+      border-collapse: collapse;
+      width: 580px;
+      border: 1px solid #6abf5e;
+    }
+ 
+    table.mark-table th,
+    table.mark-table td {
+      border: 1px solid #6abf5e;
+      padding: 6px 10px;
+      text-align: left;
+    }
+ 
+    /* Заголовок, який займає всі 6 колонок */
+    table.mark-table thead tr:first-child th {
+      background: #6abf5e;
+      color: #fff;
+      text-align: center;
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+ 
+    /* Підзаголовки колонок */
+    table.mark-table thead tr:last-child th {
+      background: #c8eabf;
+    }
+ 
+    /* Чергування рядків через nth-child */
+    table.mark-table tbody tr:nth-child(even) {
+      background: #e8f5e2;
+    }
+ 
+    table.mark-table tbody tr:nth-child(odd) {
+      background: #fff;
+    }
+ 
+ 
+    /* ===== СПОСІБ 2: float ===== */
+    .float-mark-table {
+      width: 600px;
+      border: 1px solid #6abf5e;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+ 
+    .float-row {
+      overflow: hidden;
+    }
+ 
+    /* 6 колонок: 580px / 6 ≈ 96px */
+    .float-row .cell {
+      float: left;
+      width: 95px;
+      padding: 6px 10px;
+      box-sizing: border-box;
+      border-right: 1px solid #6abf5e;
+      border-bottom: 1px solid #6abf5e;
+    }
+ 
+    .float-row .cell:last-child {
+      border-right: none;
+  /* Остання колонка ширша, щоб заповнити залишок: 580 - 5*96 = 100px */    
+      width: 105px;
+      height: unset;
+    }
+ 
+    /* Шапка (заголовок на всю ширину) */
+    .float-row.header-top .cell {
+      float: none;      /* не float, бо span на всю ширину */
+      width: 100%;
+      background: #6abf5e;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      font-size: 15px;
+      letter-spacing: 1px;
+      border-right: none;
+    }
+ 
+    /* Підзаголовки */
+    .float-row.subheader .cell {
+      background: #c8eabf;
+      font-weight: bold;
+    }
+ 
+    /* Чергування рядків */
+    .float-row.even-row .cell {
+      background: #e8f5e2;
+    }
+ 
+    .float-row.odd-row .cell {
+      background: #fff;
+    }
