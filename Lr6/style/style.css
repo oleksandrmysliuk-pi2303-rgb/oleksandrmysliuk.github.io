@@ -1,0 +1,116 @@
+body {
+    background: #fcffff;
+    font-family: Arial;
+}
+
+/* загальний стиль */
+.calculator {
+    width: 220px;
+    margin: 30px;
+    padding: 10px;
+    border: 3px solid #4fa3a3;
+    border-radius: 10px;
+    background: #cce6e6;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.top {
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.display {
+    width: 100%;
+    height: 40px;
+    border: 2px solid #4fa3a3;
+    margin-bottom: 10px;
+    text-align: right;
+    padding-right: 0px ;
+    border-radius: .5rem;
+}
+
+.screen {
+    width: 60px;
+    height: 25px;
+    background: #4fa3a3;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+/* ================= */
+/* FLOAT */
+/* ================= */
+
+.calc-float button {
+    width: 45px;
+    height: 45px;
+    margin: 5px;
+    float: left;
+
+    border: 2px solid #4fa3a3;
+    border-radius: 10px;
+    background: #e6f2f2;
+}
+
+.calc-float .buttons::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* ================= */
+/* POSITION */
+/* ================= */
+
+.buttons-pos {
+    position: relative;
+    height: 220px;
+}
+
+.buttons-pos button {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+
+    border: 2px solid #4fa3a3;
+    border-radius: 10px;
+    background: #e6f2f2;
+}
+
+/* ряд 1 */
+.buttons-pos button:nth-child(1){top:0; left:0;}
+.buttons-pos button:nth-child(2){top:0; left:55px;}
+.buttons-pos button:nth-child(3){top:0; left:110px;}
+.buttons-pos button:nth-child(4){top:0; left:165px;}
+
+/* ряд 2 */
+.buttons-pos button:nth-child(5){top:55px; left:0;}
+.buttons-pos button:nth-child(6){top:55px; left:55px;}
+.buttons-pos button:nth-child(7){top:55px; left:110px;}
+.buttons-pos button:nth-child(8){top:55px; left:165px;}
+
+/* ряд 3 */
+.buttons-pos button:nth-child(9){top:110px; left:0;}
+.buttons-pos button:nth-child(10){top:110px; left:55px;}
+.buttons-pos button:nth-child(11){top:110px; left:110px;}
+.buttons-pos button:nth-child(12){top:110px; left:165px;}
+
+/* ряд 4 */
+.buttons-pos button:nth-child(13){top:165px; left:0;}
+.buttons-pos button:nth-child(14){top:165px; left:55px;}
+.buttons-pos button:nth-child(15){top:165px; left:110px;}
+.buttons-pos button:nth-child(16){top:165px; left:165px;}
+
+/* ================= */
+/* ефекти */
+/* ================= */
+
+button:hover {
+    background: #b3d9d9;
+}
+
+button:active {
+    background: #80c1c1;
+}
