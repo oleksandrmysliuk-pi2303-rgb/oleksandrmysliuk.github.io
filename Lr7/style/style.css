@@ -1,0 +1,220 @@
+ /* ======= CSS ЗМІННІ ======= */
+    :root {
+      --red:    #e63946;
+      --yellow: #f4d000;
+      --blue:   #1d8fe1;
+      --green:  #5cb85c;
+      --dark:   #222;
+      --gray:   #f5f5f5;
+      --border: #ddd;
+      --text:   #333;
+      --light-text: #777;
+    }
+
+    /* ======= RESET ======= */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #fff;
+      color: var(--text);
+    }
+
+    /* ======= ЗАГОЛОВОК СЕКЦІЇ ======= */
+    .catalog-title {
+      text-align: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 40px 0 30px;
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+
+    /* ======= ОБГОРТКА КАТАЛОГУ ======= */
+    .catalog-wrapper {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    /* ======= КНОПКИ СТРІЛОК ======= */
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: #fff;
+      font-size: 18px;
+      color: var(--light-text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .arrow-btn:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .arrow-btn.left  { left: 10px; }
+    .arrow-btn.right { right: 10px; }
+
+    /* ======= СІТКА КАРТОК (float) ======= */
+    .catalog-grid {
+      overflow: hidden; /* clearfix */
+      border: 1px solid var(--border);
+    }
+
+    /* ======= ОДНА КАРТКА ======= */
+    .product-card {
+      float: left;
+      width: 25%;          /* 4 картки в рядок */
+      border-right: 1px solid var(--border);
+      box-sizing: border-box;
+      padding: 0 0 20px;
+      position: relative;
+      text-align: center;
+      background: #fff;
+    }
+
+    .product-card:last-child {
+      border-right: none;
+    }
+
+    /* ======= БЕЙДЖ (новинка / хіт) ======= */
+    .badge {
+      position: absolute;
+      top: -18px;
+      right: 20px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      text-align: center;
+      line-height: 1.2;
+      z-index: 10;
+    }
+
+    .badge.new  { background: var(--green); }
+    .badge.hit  { background: var(--blue); }
+
+    /* ======= КАТЕГОРІЯ ======= */
+    .product-category {
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--light-text);
+      padding: 30px 10px 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ======= ЗОБРАЖЕННЯ ======= */
+    .product-image-wrap {
+      padding: 25px 20px 15px;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-image-wrap img {
+      max-width: 150px;
+      max-height: 160px;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover .product-image-wrap img {
+      transform: scale(1.05);
+    }
+
+    /* ======= НАЗВА ТОВАРУ (посилання) ======= */
+    .product-name {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 0 10px 10px;
+      transition: color 0.2s;
+    }
+
+    .product-name:hover {
+      color: var(--red);
+      text-decoration: underline;
+    }
+
+    /* ======= ЦІНА ======= */
+    .product-price {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark);
+      padding: 5px 10px 15px;
+      min-height: 36px;
+    }
+
+    .product-price .old-price {
+      font-weight: 400;
+      color: var(--light-text);
+      text-decoration: line-through;
+      margin-right: 6px;
+      font-size: 13px;
+    }
+
+    /* ======= КНОПКИ ======= */
+    .btn-cart {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--dark);
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 12px 30px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-cart:hover {
+      background: #d4b400;
+      transform: translateY(-1px);
+    }
+
+    .btn-soon {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 12px 20px;
+      text-decoration: none;
+      line-height: 1.3;
+    }
