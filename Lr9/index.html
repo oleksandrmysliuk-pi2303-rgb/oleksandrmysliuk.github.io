@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <!-- Шрифт Raleway з Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Іконки (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__inner">
+
+            <!-- Логотип / назва проекту -->
+            <a href="#" class="logo">Project Name</a>
+
+            <!-- Навігація -->
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="#about"    class="nav__link">About</a></li>
+                    <li><a href="#team"     class="nav__link">Team</a></li>
+                    <li><a href="#blog"     class="nav__link">News</a></li>
+                    <li><a href="#contact"  class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- ======================================
+         HERO (jumbotron) — велике фото з заголовком
+    ======================================= -->
+    <section class="hero">
+        <div class="container hero__inner">
+            <h1 class="hero__title">Landing Page Template</h1>
+            <a href="#" class="btn btn--pink">Go back to the lesson</a>
+        </div>
+    </section>
+
+
+    <!-- ======================================
+         SERVICES — три іконки з текстом
+    ======================================= -->
+    <section class="section" id="about">
+        <div class="container">
+
+            <h2 class="section__title">Services</h2>
+
+            <div class="services">
+
+                <div class="service-item">
+                    <i class="fa-solid fa-palette service-item__icon"></i>
+                    <p class="service-item__text">
+                        phoncus ut, imperdiet vel venenatis vitae
+                        justo ulam dictum felis eu pede mollis,
+                        pretium massa.
+                    </p>
+                </div>
+
+                <div class="service-item">
+                    <i class="fa-regular fa-calendar service-item__icon"></i>
+                    <p class="service-item__text">
+                        phoncus ut, imperdiet vel venenatis vitae
+                        justo ulam dictum felis eu pede mollis,
+                        pretium massa.
+                    </p>
+                </div>
+
+                <div class="service-item">
+                    <i class="fa-solid fa-chart-simple service-item__icon"></i>
+                    <p class="service-item__text">
+                        phoncus ut, imperdiet vel venenatis vitae
+                        justo ulam dictum felis eu pede mollis,
+                        pretium massa.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================
+         BLOG — два пости з фото
+    ======================================= -->
+    <section class="section" id="blog">
+        <div class="container">
+
+            <h2 class="section__title">Blog</h2>
+
+            <!-- Пост 1 -->
+            <article class="post">
+                <a href="#" class="post__img-wrap">
+                    <img src="img/img1.jpg" alt="Blog post 1" class="post__img">
+                </a>
+                <div class="post__body">
+                    <h3 class="post__title">
+                        <a href="#">Socis natoque magnis dis valem parturient...</a>
+                    </h3>
+                    <p class="post__date">01.01.2017</p>
+                    <p class="post__text">
+                        Lenean commodo ligula eget dolor, aenean massa. Cum socis natoque penabibus et magnis dis
+                        partunient montes, noscetur ridiculus mus donec quam felis ultrices nec pellentesque eu.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Пост 2 -->
+            <article class="post">
+                <a href="#" class="post__img-wrap">
+                    <img src="img/img2.jpg" alt="Blog post 2" class="post__img">
+                </a>
+                <div class="post__body">
+                    <h3 class="post__title">
+                        <a href="#">Socis natoque magnis dis valem parturient...</a>
+                    </h3>
+                    <p class="post__date">31.12.2016</p>
+                    <p class="post__text">
+                        Lenean commodo ligula eget dolor, aenean massa. Cum socis natoque penabibus et magnis dis
+                        partunient montes, noscetur ridiculus mus donec quam felis ultrices nec pellentesque eu.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- ======================================
+         TEAM — додаткова секція 
+    ======================================= -->
+    <section class="section section--gray" id="team">
+        <div class="container">
+
+            <h2 class="section__title">Team</h2>
+
+            <div class="team">
+
+                <div class="team-card">
+                    <div class="team-card__avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h3 class="team-card__name">Anna Smith</h3>
+                    <p class="team-card__role">Designer</p>
+                    <p class="team-card__text">
+                        Passionate about creating beautiful and functional interfaces.
+                    </p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card__avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h3 class="team-card__name">John Doe</h3>
+                    <p class="team-card__role">Developer</p>
+                    <p class="team-card__text">
+                        Full-stack developer with a love for clean and efficient code.
+                    </p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card__avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h3 class="team-card__name">Maria Lee</h3>
+                    <p class="team-card__role">Marketing</p>
+                    <p class="team-card__text">
+                        Driving growth through creative and data-driven strategies.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================
+         FOOTER — підвал
+    ======================================= -->
+    <footer class="footer" id="contact">
+        <div class="container footer__inner">
+
+            <a href="#" class="logo logo--light">Project Name</a>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="#about"   class="nav__link nav__link--light">About</a></li>
+                    <li><a href="#team"    class="nav__link nav__link--light">Team</a></li>
+                    <li><a href="#blog"    class="nav__link nav__link--light">News</a></li>
+                    <li><a href="#contact" class="nav__link nav__link--light">Contact</a></li>
+                </ul>
+            </nav>
+
+            <p class="footer__copy">© 2017 All Rights Reserved</p>
+
+        </div>
+    </footer>
+
+</body>
+</html>

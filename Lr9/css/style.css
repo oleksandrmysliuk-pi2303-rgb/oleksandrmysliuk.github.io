@@ -1,0 +1,374 @@
+/*
+ * Landing Page — style.css
+ * Принцип DRY: спільні стилі винесені у загальні класи (.section, .btn, .logo, .nav тощо)
+ * і не повторюються для кожної секції окремо.
+ */
+
+
+/* ==========================================
+   ЗМІННІ — кольори і шрифт в одному місці.
+   Змінюєш тут — змінюється скрізь.
+========================================== */
+:root {
+    --color-primary:  #e91e8c;   /* рожевий — кнопки, акценти */
+    --color-logo:     #4db6c4;   /* блакитний — логотип у хедері */
+    --color-dark:     #4a4f5a;   /* темно-сірий — футер */
+    --color-text:     #555;      /* основний текст */
+    --color-light:    #888;      /* другорядний текст (дата) */
+    --color-gray-bg:  #f5f5f5;   /* світло-сірий фон секції Team */
+    --color-white:    #fff;
+
+    --font:           'Raleway', sans-serif;
+}
+
+
+/* ==========================================
+   RESET — прибираємо браузерні відступи
+========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ==========================================
+   BASE — базові стилі сторінки
+========================================== */
+body {
+    font-family: var(--font);
+    font-weight: 400;
+    color: var(--color-text);
+    line-height: 1.6;
+    background: var(--color-white);
+}
+
+/* Контейнер — обмежує ширину і центрує вміст */
+.container {
+    width: 760px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   LOGO — використовується у header і footer
+========================================== */
+.logo {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-logo);   /* блакитний */
+    letter-spacing: 0.5px;
+}
+
+/* Варіант логотипу для темного футера */
+.logo--light {
+    color: var(--color-logo);
+}
+
+
+/* ==========================================
+   NAV — навігація (однакова у header і footer)
+========================================== */
+.nav__list {
+    display: flex;
+    gap: 24px;
+}
+
+.nav__link {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-text);
+    transition: color 0.2s;
+}
+
+.nav__link:hover {
+    color: var(--color-primary);
+}
+
+/* Варіант посилань для темного футера */
+.nav__link--light {
+    color: #aab0bb;
+}
+
+.nav__link--light:hover {
+    color: var(--color-white);
+}
+
+
+/* ==========================================
+   BUTTON — кнопка (принцип DRY: один клас .btn,
+   модифікатор .btn--pink міняє лише колір)
+========================================== */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px;       /* заокруглена як на макеті */
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn--pink {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 2px solid var(--color-primary);
+}
+
+.btn--pink:hover {
+    background-color: #c8177a;
+    border-color: #c8177a;
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================
+   SECTION — спільні стилі для всіх секцій
+   (використовується як базовий клас)
+========================================== */
+.section {
+    padding: 60px 0;
+    background: var(--color-white);
+}
+
+/* Модифікатор — сіре тло для секції Team */
+.section--gray {
+    background: var(--color-gray-bg);
+}
+
+/* Заголовок секції — однаковий скрізь */
+.section__title {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+
+/* ==========================================
+   HEADER — шапка сайту
+========================================== */
+.header {
+    background: var(--color-white);
+    border-bottom: 1px solid #eee;
+    position: sticky;    /* липка навігація — залишається зверху при скролі */
+    top: 0;
+    z-index: 100;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+
+/* ==========================================
+   HERO — великий банер з фоном
+========================================== */
+.hero {
+    background-image: url('../img/jumbotron.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.hero__title {
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--color-white);
+    letter-spacing: 2px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+
+/* ==========================================
+   SERVICES — три колонки з іконками
+========================================== */
+.services {
+    display: flex;
+    gap: 40px;
+}
+
+.service-item {
+    flex: 1;          /* кожна колонка займає рівну частину */
+    text-align: center;
+}
+
+.service-item__icon {
+    font-size: 40px;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.service-item__text {
+    font-size: 13px;
+    color: var(--color-light);
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   BLOG — пости зі зображенням і текстом
+========================================== */
+.post {
+    display: flex;      /* зображення і текст в рядок через flexbox */
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.post:last-child {
+    margin-bottom: 0;
+}
+
+/* Обгортка фото */
+.post__img-wrap {
+    flex-shrink: 0;     /* фото не стискається */
+}
+
+.post__img {
+    width: 200px;
+    height: 140px;
+    object-fit: cover;  /* картинка заповнює блок без деформації */
+}
+
+/* Текстова частина */
+.post__body {
+    flex: 1;
+}
+
+.post__title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.post__title a {
+    color: var(--color-text);
+    transition: color 0.2s;
+}
+
+.post__title a:hover {
+    color: var(--color-primary);
+}
+
+.post__date {
+    font-size: 12px;
+    color: var(--color-light);
+    margin-bottom: 10px;
+}
+
+.post__text {
+    font-size: 13px;
+    color: var(--color-light);
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   TEAM — додаткова секція (бонус)
+   Три картки в рядок через flexbox
+========================================== */
+.team {
+    display: flex;
+    gap: 30px;
+}
+
+.team-card {
+    flex: 1;
+    background: var(--color-white);
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.team-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Аватар — коло з іконкою */
+.team-card__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 32px;
+    color: #aaa;
+}
+
+.team-card__name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 4px;
+}
+
+.team-card__role {
+    font-size: 13px;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.team-card__text {
+    font-size: 13px;
+    color: var(--color-light);
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   FOOTER — підвал
+========================================== */
+.footer {
+    background-color: var(--color-dark);
+    padding: 40px 0;
+}
+
+.footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.footer__copy {
+    font-size: 12px;
+    color: #6a707c;
+    letter-spacing: 0.5px;
+}
