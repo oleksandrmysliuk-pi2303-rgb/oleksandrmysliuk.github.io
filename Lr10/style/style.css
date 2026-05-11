@@ -1,0 +1,150 @@
+/* ================================================
+   MOBILE FIRST — style.css
+
+   Підхід Mobile First означає:
+   - Спочатку пишемо стилі для ТЕЛЕФОНУ (без media queries)
+   - Потім через @media (min-width: ...) ДОДАЄМО стилі
+     для більших екранів
+
+   Це протилежність Desktop First, де писали
+   @media (max-width: ...) щоб зменшувати для телефонів.
+================================================ */
+
+
+/* ================================================
+   БАЗОВІ СТИЛІ — для всіх екранів (телефон)
+   Це те що бачить телефон БЕЗ жодних media queries
+================================================ */
+
+* {
+    box-sizing: border-box;  /* padding і border входять у ширину елемента */
+}
+
+body {
+    width: 90%;           /* займає 90% ширини екрану */
+    margin: 2em auto;     /* відступ зверху/знизу і автоцентрування */
+    font: 1em/1.3 Arial, Helvetica, sans-serif;  /* розмір шрифту / висота рядка */
+}
+
+a:link,
+a:visited {
+    color: #333;
+}
+
+/* Списки в nav і aside — без крапок і відступу */
+nav ul,
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Посилання навігації — кожне на окремому рядку (display: block) */
+nav a:link,
+nav a:visited {
+    background-color: rgb(207 232 220 / 20%);
+    border: 2px solid rgb(79 185 227);
+    text-decoration: none;
+    display: block;       /* займає весь рядок — зручно тикати пальцем */
+    padding: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: rgb(207 232 220 / 70%);
+}
+
+/* Маленький aside всередині article */
+.related {
+    background-color: rgb(79 185 227 / 30%);
+    border: 1px solid rgb(79 185 227);
+    padding: 10px;
+}
+
+/* Бічна панель */
+.sidebar {
+    background-color: rgb(207 232 220 / 50%);
+    padding: 10px;
+}
+
+/* Відступ знизу для article на мобільному */
+article {
+    margin-bottom: 1em;
+}
+
+
+/* ================================================
+   BREAKPOINT 1 — планшет: min-width: 40em (≈ 640px)
+
+   min-width означає "якщо екран ШИРШий за 40em — застосуй"
+   Тобто це протилежність max-width з Desktop First.
+
+   40em = 40 × 16px = 640px
+   Використовуємо em бо він залежить від розміру шрифту:
+   якщо юзер збільшить шрифт — breakpoint теж збільшиться.
+================================================ */
+@media screen and (min-width: 40em) {
+
+    /* article стає двоколонковим:
+       .content (текст) і .related (aside) стають поруч */
+    article {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    /* Перший дочірній елемент article (.content) займає 3 частини */
+    article > *:first-child {
+        flex: 3;
+    }
+
+    /* Останній дочірній елемент article (.related) займає 1 частину */
+    article > *:last-child {
+        flex: 1;
+    }
+
+    /* Навігація — пункти в один рядок замість колонки */
+    nav ul {
+        display: flex;
+    }
+
+    /* Кожен пункт меню займає рівну частину */
+    nav li {
+        flex: 1;
+    }
+}
+
+
+/* ================================================
+   BREAKPOINT 2 — десктоп: min-width: 70em (≈ 1120px)
+
+   70em = 70 × 16px = 1120px
+   На великому екрані з'являється третя колонка —
+   sidebar виноситься праворуч від article.
+================================================ */
+@media screen and (min-width: 70em) {
+
+    /* main стає двоколонковим: article + sidebar поруч */
+    main {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;  /* вирівнювання по верхньому краю */
+    }
+
+    /* article займає 3 частини від ширини main */
+    main > article {
+        flex: 3;
+        margin-bottom: 0;  /* прибираємо відступ бо sidebar вирівнює висоту */
+    }
+
+    /* sidebar займає 1 частину */
+    main > aside {
+        flex: 1;
+    }
+
+    /* Лінія зверху футера — відділяє від контенту */
+    footer {
+        border-top: 1px solid #ccc;
+        margin-top: 2em;
+    }
+}
