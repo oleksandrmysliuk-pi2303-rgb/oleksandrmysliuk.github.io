@@ -1,0 +1,589 @@
+/*
+====================================================
+  PAYMENT FORM — style.css
+  Точне відтворення макету зі скріншоту
+====================================================
+*/
+
+
+/* ---- CSS ЗМІННІ ---- */
+:root {
+    --bg:         #e8e8e8;    /* сірий фон сторінки */
+    --white:      #ffffff;
+    --text:       #111111;    /* основний темний текст */
+    --muted:      #888888;    /* другорядний сірий текст */
+    --border:     #e0e0e0;    /* колір рамок і роздільників */
+    --radius:     14px;       /* заокруглення картки */
+    --radius-sm:  8px;        /* заокруглення полів */
+}
+
+
+/* ---- RESET ---- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button, input, select {
+    font-family: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+a { text-decoration: none; }
+
+
+/* ---- СТОРІНКА ---- */
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px;
+}
+
+/* Підпис "Form" у верхньому лівому куті */
+.page-label {
+    width: 100%;
+    max-width: 540px;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+
+/* ====================================================
+   КАРТКА — головний білий контейнер
+==================================================== */
+.card {
+    width: 100%;
+    max-width: 540px;
+    background: var(--white);
+    border-radius: var(--radius);
+    /* Легка тінь як на скріншоті */
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    overflow: hidden;
+}
+
+
+/* ====================================================
+   ШАПКА КАРТКИ — заголовок + See plans
+==================================================== */
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* заголовок ліворуч, посилання праворуч */
+    padding: 24px 24px 0;
+}
+
+.card-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* Посилання "See plans" — сіре */
+.link-plans {
+    font-size: 14px;
+    color: var(--muted);
+    transition: color 0.2s;
+}
+
+.link-plans:hover {
+    color: var(--text);
+}
+
+
+/* ====================================================
+   ПЕРЕМИКАЧ ТАРИФУ: Billed annually / Billed monthly
+==================================================== */
+.billing-toggle {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px 20px;
+    /* Нижня рамка відділяє від секцій */
+    border-bottom: 1px solid var(--border);
+}
+
+/* Базовий стиль обох варіантів */
+.toggle-option {
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Неактивний — сірий */
+.toggle-option--inactive {
+    color: var(--muted);
+}
+
+/* Активний — чорний жирний */
+.toggle-option--active {
+    color: var(--text);
+    font-weight: 700;
+}
+
+/* Значок знижки "-20%" */
+.discount-badge {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+
+/* ====================================================
+   СЕКЦІЯ (Billing / Payment information)
+==================================================== */
+.section {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Заголовок секції */
+.section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 14px;
+}
+
+/* Рядок заголовку з елементом праворуч */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.section-header .section-title {
+    margin-bottom: 0;
+}
+
+/* Значок "Secured by Stripe" */
+.stripe-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+
+/* ====================================================
+   FIELDS BOX — рамка навколо групи полів
+==================================================== */
+.fields-box {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;  /* обрізає кути у роздільників */
+}
+
+/* Горизонтальний роздільник між полями */
+.field-divider {
+    height: 1px;
+    background: var(--border);
+}
+
+
+/* ====================================================
+   FIELD ROW — один рядок поля (label + input)
+==================================================== */
+.field-row {
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    min-height: 46px;  /* висота рядка як на скріншоті */
+}
+
+/* Підпис поля — фіксована ширина, вирівняний праворуч */
+.field-label {
+    width: 80px;
+    min-width: 80px;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: right;
+    padding-right: 16px;
+    /* Вертикальна лінія між label і input */
+    border-right: 1px solid var(--border);
+    align-self: stretch;     /* розтягується на всю висоту рядка */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Поле вводу — займає весь залишок рядка */
+.field-input {
+    flex: 1;
+    padding: 0 12px;
+    font-size: 13px;
+    color: var(--text);
+    height: 46px;
+    background: transparent;
+}
+
+/* Placeholder — сірий */
+.field-input::placeholder {
+    color: #bbb;
+}
+
+/* Фокус на інпуті — легка підсвітка фону */
+.field-input:focus {
+    background: #fafafa;
+}
+
+
+/* ---- Рядок State + ZIP — два поля поруч ---- */
+.field-row-inner {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Select (dropdown) з кастомною стрілкою */
+.select-wrap {
+    position: relative;   /* для абсолютної стрілки */
+    display: flex;
+    align-items: center;
+}
+
+/* Ховаємо стандартну стрілку select */
+.field-select {
+    appearance: none;         /* прибирає стандартний вигляд */
+    -webkit-appearance: none;
+    font-size: 13px;
+    color: var(--text);
+    padding: 0 28px 0 12px;  /* відступ праворуч для кастомної стрілки */
+    height: 46px;
+    cursor: pointer;
+    background: transparent;
+}
+
+/* Кастомна стрілка — абсолютно позиційована праворуч */
+.select-arrow {
+    position: absolute;
+    right: 6px;
+    pointer-events: none;  /* кліки проходять крізь іконку до select */
+}
+
+/* ZIP label — посередині рядка */
+.field-label--zip {
+    width: auto;
+    min-width: auto;
+    border-right: none;
+    border-left: 1px solid var(--border);
+    padding-left: 14px;
+    padding-right: 10px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+}
+
+/* ZIP input — вузький */
+.field-input--zip {
+    width: 80px;
+    flex: none;
+    padding-left: 8px;
+}
+
+/* Select країни — ширший, з прапором */
+.select-wrap--country {
+    flex: 1;
+    gap: 8px;
+}
+
+.country-flag {
+    font-size: 18px;
+    margin-left: 12px;
+    line-height: 1;
+}
+
+.field-select--country {
+    flex: 1;
+    padding-left: 4px;
+}
+
+
+/* ---- Рядок картки (Card number + MM/YY) ---- */
+.field-row--card {
+    gap: 8px;
+}
+
+/* Іконка картки між label і input */
+.card-icon {
+    flex-shrink: 0;
+}
+
+/* Поле номера картки */
+.field-input--card-num {
+    flex: 1;
+    padding: 0 8px;
+}
+
+/* Поле MM/YY — праворуч, не розтягується */
+.field-input--expiry {
+    flex: none;
+    width: 80px;
+    text-align: right;
+    padding-right: 4px;
+    color: var(--muted);
+}
+
+
+/* ====================================================
+   КНОПКА "Add promo code"
+==================================================== */
+.promo-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 24px;
+    width: 100%;
+    font-size: 14px;
+    color: #444;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+}
+
+.promo-btn:hover {
+    background: #f7f7f7;
+}
+
+
+/* ====================================================
+   ІНФОРМАЦІЙНИЙ ТЕКСТ
+==================================================== */
+.info-text {
+    padding: 16px 24px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* "You will not be charged today." — середній розмір */
+.info-text__main {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+/* Деталі після пробного періоду — дрібніший */
+.info-text__sub {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* Жирний текст всередині — ціна і дата */
+.info-text__sub strong {
+    color: var(--text);
+}
+
+
+/* ====================================================
+   ПІДВАЛ КАРТКИ — Cancel / Terms / Start trial
+==================================================== */
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+}
+
+/* Кнопка Cancel — обведена рамкою */
+.btn-cancel {
+    height: 36px;
+    padding: 0 18px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text);
+    cursor: pointer;
+    background: var(--white);
+    transition: background 0.15s;
+}
+
+.btn-cancel:hover {
+    background: #f5f5f5;
+}
+
+/* Посилання Terms — по центру */
+.link-terms {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.link-terms:hover {
+    color: var(--text);
+}
+
+/* Кнопка Start trial — чорна з клавіатурним скороченням */
+.btn-start {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 36px;
+    padding: 0 16px;
+    background: #111;           /* чорна кнопка */
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-start:hover {
+    background: #333;
+}
+
+/* Значок клавіатурного скорочення "Cmd+Enter" */
+.kbd {
+    font-size: 11px;
+    color: #888;
+    background: #333;           /* трохи світліший від кнопки */
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-family: monospace;     /* моноширний шрифт як у терміналі */
+}
+
+
+/* ====================================================
+   АДАПТИВНІСТЬ
+
+   Breakpoints:
+     768px — планшет
+     480px — телефон
+==================================================== */
+
+/* ---- ПЛАНШЕТ (до 768px) ---- */
+@media (max-width: 768px) {
+
+    /* Картка займає всю ширину з відступами */
+    .card {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    /* Менші внутрішні відступи */
+    .card-header,
+    .billing-toggle,
+    .section,
+    .promo-btn,
+    .info-text,
+    .card-footer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+
+/* ---- ТЕЛЕФОН (до 480px) ---- */
+@media (max-width: 480px) {
+
+    /* Сторінка — менші відступи */
+    body {
+        padding: 12px 10px;
+        background: #f0f0f0;
+    }
+
+    /* Картка — без заокруглених кутів на маленькому екрані */
+    .card {
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    /* Шапка: заголовок і See plans — менший шрифт */
+    .card-title {
+        font-size: 14px;
+    }
+
+    .link-plans {
+        font-size: 13px;
+    }
+
+    /* Перемикач тарифу — зменшений шрифт */
+    .toggle-option {
+        font-size: 13px;
+    }
+
+    /* Label полів — вужчий (80px → 60px) щоб більше місця для input */
+    .field-label {
+        width: 60px;
+        min-width: 60px;
+        font-size: 12px;
+        padding-right: 10px;
+    }
+
+    /* Висота рядків — трохи менша */
+    .field-row {
+        min-height: 42px;
+    }
+
+    .field-input,
+    .field-select {
+        height: 42px;
+        font-size: 12px;
+    }
+
+    /* State + ZIP рядок:
+       На телефоні ZIP-поле вузьке — зменшуємо ще більше */
+    .field-input--zip {
+        width: 60px;
+        font-size: 12px;
+    }
+
+    .field-label--zip {
+        font-size: 12px;
+        padding-left: 10px;
+        padding-right: 8px;
+    }
+
+    /* Поле MM/YY — вужче */
+    .field-input--expiry {
+        width: 60px;
+        font-size: 12px;
+    }
+
+    /* Кнопка промокоду — менший шрифт */
+    .promo-btn {
+        font-size: 13px;
+    }
+
+    /* Інформаційний текст — менший */
+    .info-text__main {
+        font-size: 13px;
+    }
+
+    .info-text__sub {
+        font-size: 12px;
+    }
+
+    /* Підвал: кнопки менші */
+    .btn-cancel {
+        font-size: 13px;
+        padding: 0 12px;
+        height: 34px;
+    }
+
+    .btn-start {
+        font-size: 13px;
+        padding: 0 12px;
+        height: 34px;
+        gap: 6px;
+    }
+
+    /* Kbd підказка — приховуємо на дуже маленькому екрані */
+    .kbd {
+        display: none;
+    }
+
+    .link-terms {
+        font-size: 13px;
+    }
+}
