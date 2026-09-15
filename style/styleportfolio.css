@@ -3,6 +3,11 @@ h1 {
     font-size: 70px;
     text-align: center;
 }
+h2 { 
+    color: rgb(106, 104, 99);
+    font-size: 70px;
+    text-align: center;
+}
 .title{
      text-align: center; 
     margin-top: 0; 
