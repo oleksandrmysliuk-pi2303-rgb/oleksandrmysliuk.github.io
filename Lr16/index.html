@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lr5</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<h1>Лабораторна робота №5</h1>
+<!-- ===================== ЗАВДАННЯ 1 ===================== -->
+<h2>Завдання 1. Конвертер температури</h2>
+<div class="task">
+  <div class="row">
+    <label for="fahrenheit">Температура за Фаренгейтом</label>
+    <input type="text" id="fahrenheit">
+  </div>
+  <div class="row">
+    <label for="celsius">Температура за Цельсієм</label>
+    <input type="text" id="celsius">
+  </div>
+</div>
+ 
+<!-- ===================== ЗАВДАННЯ 2 ===================== -->
+<h2>Завдання 2. Таблиця множення — текстове поле</h2>
+<div class="task">
+  <div class="row" id="score2"></div>
+  <div class="row">
+    <button id="nextBtn2">наступне завдання</button>
+  </div>
+  <div class="row">
+    <span id="question2"></span>
+    <input type="text" id="answer2" style="width:60px">
+    <button id="checkBtn2">перевірити</button>
+  </div>
+  <div class="row result" id="result2"></div>
+</div>
+ 
+<!-- ===================== ЗАВДАННЯ 3 ===================== -->
+<h2>Завдання 3. Таблиця множення — радіокнопки</h2>
+<div class="task">
+  <div class="row" id="score3"></div>
+  <div class="row">
+    <button id="nextBtn3">наступне завдання</button>
+  </div>
+  <div class="row">
+    <span id="question3"></span>
+  </div>
+  <div class="row" id="options3"></div>
+  <div class="row result" id="result3"></div>
+</div>
+ 
+<!-- ===================== ЗАВДАННЯ 4 ===================== -->
+<h2>Завдання 4. Ротатор зображень</h2>
+<div class="task">
+  <div id="rotator"></div>
+</div>
+ 
+<!-- ===================== ЗАВДАННЯ 5 ===================== -->
+<h2>Завдання 5. Captcha</h2>
+<div class="task">
+  <div class="row">Введіть число</div>
+  <div class="row" id="captchaPixels"></div>
+  <div class="row">
+    <input type="text" id="captchaInput" style="width:150px">
+    <button id="captchaCheckBtn">Перевірити</button>
+  </div>
+  <div class="row result" id="captchaResult"></div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
