@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Платформа пошуку IT-фахівців та замовлень">
+    <title>IT-замовлення</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <p class="eyebrow">Платформа для фахівців і замовників</p>
+        <h1>Знайди своє наступне IT-замовлення</h1>
+        <p class="intro">Переглядай відкриті проєкти або додай власне замовлення.</p>
+      </div>
+    </header>
+
+    <main class="container page-content">
+      <section class="panel" aria-labelledby="form-title">
+        <h2 id="form-title">Додати замовлення</h2>
+        <p class="section-hint">Заповни обов’язкові поля, щоб опублікувати проєкт.</p>
+
+        <form id="order-form">
+          <label for="title">Назва замовлення <span aria-hidden="true">*</span></label>
+          <input id="title" name="title" type="text" required maxlength="150"
+                 placeholder="Наприклад, створити сайт-візитку">
+
+          <label for="description">Опис <span aria-hidden="true">*</span></label>
+          <textarea id="description" name="description" required maxlength="1000" rows="4"
+                    placeholder="Опиши завдання та очікуваний результат"></textarea>
+
+          <div class="form-row">
+            <div>
+              <label for="budget">Бюджет</label>
+              <input id="budget" name="budget" type="number" min="0" step="0.01"
+                     placeholder="Наприклад, 1200">
+            </div>
+            <div>
+              <label for="technology">Технологія</label>
+              <input id="technology" name="technology" type="text" maxlength="100"
+                     placeholder="Наприклад, JavaScript">
+            </div>
+          </div>
+
+          <button id="submit-button" type="submit">Опублікувати замовлення</button>
+          <p id="form-message" class="message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="orders-section" aria-labelledby="orders-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Актуальні можливості</p>
+            <h2 id="orders-title">Відкриті замовлення</h2>
+          </div>
+          <button id="refresh-button" class="button-secondary" type="button">Оновити список</button>
+        </div>
+        <p id="list-message" class="message" role="status" aria-live="polite">Завантаження замовлень…</p>
+        <div id="orders-list" class="orders-list" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">Навчальний вебзастосунок на Supabase та JavaScript</div>
+    </footer>
+  </body>
+</html>
