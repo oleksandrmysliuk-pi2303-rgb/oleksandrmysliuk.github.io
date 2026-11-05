@@ -1,0 +1,57 @@
+{
+  "page": {
+    "eyebrow": "A platform for professionals and clients",
+    "title": "Find your next IT project",
+    "intro": "Browse open projects or post a new order.",
+    "formTitle": "Post an order",
+    "formHint": "Fill in the required fields to publish a project.",
+    "ordersEyebrow": "Latest opportunities",
+    "ordersTitle": "Open orders",
+    "refresh": "Refresh list",
+    "footer": "A learning web app built with Supabase and JavaScript"
+  },
+  "form": {
+    "titleLabel": "Order title",
+    "titlePlaceholder": "For example, build a portfolio website",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Describe the task and expected result",
+    "budgetLabel": "Budget",
+    "budgetPlaceholder": "For example, 1200",
+    "technologyLabel": "Technology",
+    "technologyPlaceholder": "For example, JavaScript",
+    "submit": "Post order",
+    "submitting": "Submitting…"
+  },
+  "status": {
+    "open": "Open",
+    "in_progress": "In progress",
+    "closed": "Closed"
+  },
+  "messages": {
+    "loading": "Loading orders…",
+    "empty": "There are no orders yet. You can post the first one using the form.",
+    "noTitle": "Untitled",
+    "noDescription": "No description provided.",
+    "found": "Orders found: {{count}}",
+    "saved": "Saving order…",
+    "added": "Order added successfully.",
+    "addedRefreshFailed": "The order was added, but the list did not refresh. Use the Refresh list button.",
+    "loadError": "Could not load orders. Check your connection and access settings.",
+    "insertError": "Could not add the order. Check your connection and INSERT policy.",
+    "configMissing": "Add your Project URL and Publishable key in js/app.js to connect Supabase.",
+    "libraryError": "Could not load the Supabase library. Check your internet connection.",
+    "required": "Enter an order title and description.",
+    "titleTooLong": "The title must be 150 characters or fewer.",
+    "descriptionTooLong": "The description must be 1000 characters or fewer.",
+    "technologyTooLong": "The technology name must be 100 characters or fewer.",
+    "invalidBudget": "The budget must be a non-negative number."
+  },
+  "budget": {
+    "label": "Budget: {{amount}} USD"
+  },
+  "language": {
+    "label": "Language",
+    "chooseTitle": "Choose your language",
+    "chooseHint": "You can change your choice on the page."
+  }
+}

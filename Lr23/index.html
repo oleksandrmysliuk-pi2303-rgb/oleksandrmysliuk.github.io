@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Платформа пошуку IT-фахівців та замовлень">
+    <title>IT-замовлення</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <dialog id="language-dialog" aria-labelledby="language-dialog-title">
+      <div class="dialog-content">
+        <p class="eyebrow" data-i18n="language.label">Мова</p>
+        <h2 id="language-dialog-title" data-i18n="language.chooseTitle">Оберіть мову</h2>
+        <p class="section-hint" data-i18n="language.chooseHint">
+          Вибір можна буде змінити на сторінці.
+        </p>
+
+        <label for="initial-language" data-i18n="language.label">Мова</label>
+        <select id="initial-language">
+          <option value="uk">Українська</option>
+          <option value="en">English</option>
+        </select>
+
+        <button id="confirm-language" type="button">Продовжити</button>
+      </div>
+    </dialog>
+
+    <div id="app" hidden>
+      <header class="site-header">
+        <div class="container header-content">
+          <div>
+            <p class="eyebrow" data-i18n="page.eyebrow">
+              Платформа для фахівців і замовників
+            </p>
+            <h1 data-i18n="page.title">Знайди своє наступне IT-замовлення</h1>
+            <p class="intro" data-i18n="page.intro">
+              Переглядай відкриті проєкти або додай власне замовлення.
+            </p>
+          </div>
+
+          <label class="language-control">
+            <span data-i18n="language.label">Мова</span>
+            <select id="language-switch" aria-label="Language">
+              <option value="uk">Українська</option>
+              <option value="en">English</option>
+            </select>
+          </label>
+        </div>
+      </header>
+
+      <main class="container page-content">
+        <section class="panel" aria-labelledby="form-title">
+          <h2 id="form-title" data-i18n="page.formTitle">Додати замовлення</h2>
+          <p class="section-hint" data-i18n="page.formHint">
+            Заповни обов’язкові поля, щоб опублікувати проєкт.
+          </p>
+
+          <form id="order-form">
+            <label for="title">
+              <span data-i18n="form.titleLabel">Назва замовлення</span>
+              <span aria-hidden="true">*</span>
+            </label>
+            <input
+              id="title"
+              name="title"
+              type="text"
+              required
+              maxlength="150"
+              data-i18n-placeholder="form.titlePlaceholder"
+              placeholder="Наприклад, створити сайт-візитку"
+            >
+
+            <label for="description">
+              <span data-i18n="form.descriptionLabel">Опис</span>
+              <span aria-hidden="true">*</span>
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              required
+              maxlength="1000"
+              rows="4"
+              data-i18n-placeholder="form.descriptionPlaceholder"
+              placeholder="Опиши завдання та очікуваний результат"
+            ></textarea>
+
+            <div class="form-row">
+              <div>
+                <label for="budget" data-i18n="form.budgetLabel">Бюджет</label>
+                <input
+                  id="budget"
+                  name="budget"
+                  type="number"
+                  min="0"
+                  step="0.01"
+                  data-i18n-placeholder="form.budgetPlaceholder"
+                  placeholder="Наприклад, 1200"
+                >
+              </div>
+
+              <div>
+                <label for="technology" data-i18n="form.technologyLabel">Технологія</label>
+                <input
+                  id="technology"
+                  name="technology"
+                  type="text"
+                  maxlength="100"
+                  data-i18n-placeholder="form.technologyPlaceholder"
+                  placeholder="Наприклад, JavaScript"
+                >
+              </div>
+            </div>
+
+            <button id="submit-button" type="submit" data-i18n="form.submit">
+              Опублікувати замовлення
+            </button>
+            <p id="form-message" class="message" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="orders-section" aria-labelledby="orders-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow" data-i18n="page.ordersEyebrow">Актуальні можливості</p>
+              <h2 id="orders-title" data-i18n="page.ordersTitle">Відкриті замовлення</h2>
+            </div>
+
+            <button
+              id="refresh-button"
+              class="button-secondary"
+              type="button"
+              data-i18n="page.refresh"
+            >
+              Оновити список
+            </button>
+          </div>
+
+          <p
+            id="list-message"
+            class="message"
+            role="status"
+            aria-live="polite"
+            data-i18n="messages.loading"
+          >
+            Завантаження замовлень…
+          </p>
+          <div id="orders-list" class="orders-list" aria-live="polite"></div>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <div class="container" data-i18n="page.footer">
+          Навчальний вебзастосунок на Supabase та JavaScript
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script src="js/i18.js" defer></script>
+  <script src="js/app.js" defer></script>
+</html>
